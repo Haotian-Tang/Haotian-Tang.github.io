@@ -2,6 +2,9 @@ name: "Haotian Tang"
 output_dir: "."
 navbar:
   title: "Home"
+  left: 
+    - text: "Self Info"
+      href: Self_Info.html
   right:
     - text: "About"
       href: about.html

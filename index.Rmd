@@ -1,5 +1,5 @@
 ---
-title: "Haotian Tang's website"
+title: "Haotian Tang"
 output: 
   html_document:
     toc: true
@@ -7,6 +7,10 @@ output:
     theme: cerulean
 ---
 
-This is Homework 4. 
+Welcome to my website. Feel free to click icons and links to know more about me!
 
-Problem 1
+[Self Info](file:///Users/synco/Haotian-Tang.github.io/Self_Info.html)
+
+
+
+
