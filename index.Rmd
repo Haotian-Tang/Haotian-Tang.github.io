@@ -9,6 +9,8 @@ output:
 
 Welcome to my website. Feel free to click icons and links to know more about me!
 
+# About me
+
 [Self Info](Self_Info.html)
 
 [GitHub](https://github.com/Haotian-Tang)
