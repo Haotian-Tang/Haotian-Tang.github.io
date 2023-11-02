@@ -1,12 +1,9 @@
 ---
+title: "Contact Information"
 output: 
   html_document:
-    toc: true
-    toc_float: true
     theme: cerulean
 ---
-
-# Contact Information
 
 Phone Number: 640-228-9111
 
