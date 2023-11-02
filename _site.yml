@@ -8,8 +8,8 @@ navbar:
   right:
     - text: "About"
       href: about.html
-    - icon: fa-envelope fa-lg
-      href: mailto:<ht2630@cumc.columbia.com>
+    - text: "Contact"
+      href: contact.html
     - icon: fa-github fa-lg
       href: http://github.com/Haotian-Tang/
 output:

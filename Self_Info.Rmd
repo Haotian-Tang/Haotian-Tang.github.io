@@ -9,7 +9,7 @@ output:
 
 # Basic Information
 
-My name is Haotian Tang (Synco). I am currently pursuing the degree of master of science in biostatistics. The specific track is statistical genetics. I am very interested in how we can use mathematical modeling and statistical analyis to dissect genetics. 
+My name is Haotian Tang (Synco). I graduated from the University of Toronto and am currently pursuing the degree of master of science in biostatistics. The specific track is statistical genetics. I am very interested in how we can use mathematical modeling and statistical analyis to dissect genetics. 
 
 # Academic and Professional Experiences
 
@@ -31,8 +31,6 @@ More details can be seen in the [Resume](Resume.pdf).
 
 I like workout, playing my guitar, listening to music, traveling, and tasting delicious food! 
 
-# Contact 
 
-Phone: 640-228-9111
 
-Email: ht2630@cumc.columbia.edu
+

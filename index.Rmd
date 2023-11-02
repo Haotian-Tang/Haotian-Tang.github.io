@@ -1,5 +1,5 @@
 ---
-title: "Haotian Tang"
+title: "Haotian Tang's Website"
 output: 
   html_document:
     toc: true
@@ -9,7 +9,11 @@ output:
 
 Welcome to my website. Feel free to click icons and links to know more about me!
 
-[Self Info](file:///Users/synco/Haotian-Tang.github.io/Self_Info.html)
+[Self Info](Self_Info.html)
+
+[GitHub](https://github.com/Haotian-Tang)
+
+[Contact](contact.html)
 
 
 
