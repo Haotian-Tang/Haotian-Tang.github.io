@@ -1,5 +1,0 @@
----
-title: "About"
----
-
-It is a website made for Homework 4. 
