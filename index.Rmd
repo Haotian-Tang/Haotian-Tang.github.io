@@ -17,7 +17,7 @@ Welcome to my website. Feel free to click icons and links to know more about me!
 
 [Contact](contact.html)
 
-[plotly](plotly.html)
+[Plotly](plotly.html)
 
 
 

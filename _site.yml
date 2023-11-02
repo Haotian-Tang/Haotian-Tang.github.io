@@ -7,6 +7,8 @@ navbar:
       href: Self_Info.html
     - text: "Plotly"
       href: plotly.html
+    - text: "Dashboard"
+      href: Dashboard.html
   right:
     - text: "About"
       href: about.html
