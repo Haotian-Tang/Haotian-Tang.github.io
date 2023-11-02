@@ -1,0 +1,25 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+In this page, I am trying to make plots using plotly. 
+
+```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+
+data(rest_inspec)
+rest_inspec
+```
+
+First let's clean and tidy data. 
+
+```{r}
+
+```
+

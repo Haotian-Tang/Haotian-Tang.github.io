@@ -5,6 +5,8 @@ navbar:
   left: 
     - text: "Self Info"
       href: Self_Info.html
+    - text: "Plotly"
+      href: plotly.html
   right:
     - text: "About"
       href: about.html
