@@ -19,6 +19,8 @@ Welcome to my website. Feel free to click icons and links to know more about me!
 
 [Plotly](plotly.html)
 
+[Dashboard](Dashboard.html)
+
 
 
 

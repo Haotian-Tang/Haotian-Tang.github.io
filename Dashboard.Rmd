@@ -11,29 +11,64 @@ library(flexdashboard)
 library(tidyverse)
 library(plotly)
 library(p8105.datasets)
+data(rest_inspec)
+inspect = rest_inspec
+inspect |> 
+  janitor::clean_names() 
+chinese_restaurants = subset(inspect, cuisine_description == "Chinese") |> 
+  drop_na(score) |> 
+  drop_na(boro)
 ```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 
-### Chart A
+### Bar Plot
 
 ```{r}
+inspection_counts = chinese_restaurants |>
+  group_by(dba) |>
+  summarise(inspection_count = n())
 
+filtered_inspection_counts = inspection_counts |>
+  filter(inspection_count > 50) |>
+  arrange(inspection_count) |>
+  mutate(dba = fct_inorder(dba))
+
+plot_ly(filtered_inspection_counts, x = ~dba, y = ~inspection_count, type = 'bar') |>
+  layout(title = 'Number of Inspections per Restaurant (More than 50 Inspections)',
+         xaxis = list(title = 'Restaurant', tickangle = -45),
+         yaxis = list(title = 'Number of Inspections'))
 ```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 
-### Chart B
+### Box Plot
 
 ```{r}
+restaurant_score = chinese_restaurants |>
+  select(boro, score) |>
+  filter(!is.na(score))
 
+plot_ly(restaurant_score, y = ~score, color = ~boro, type = 'box') |>
+  layout(title = 'Score Distribution by Borough',
+         yaxis = list(title = 'Score'),
+         xaxis = list(title = 'Borough'))
 ```
 
-### Chart C
+### Line Plot
 
 ```{r}
+no_1_chinese_data = chinese_restaurants |>
+  filter(grepl("NO. 1 CHINESE RESTAURANT", dba)) |>
+  arrange(as.Date(grade_date, format = "%m/%d/%Y")) |>
+  mutate(score = as.numeric(score))
 
+plot_ly(no_1_chinese_data, x = ~grade_date, y = ~score, type = 'scatter', mode = 'lines+markers',
+                     line = list(shape = "spline")) |>
+  layout(title = 'Score Changes Over Time for No. 1 Chinese Restaurant',
+         xaxis = list(title = 'Date'),
+         yaxis = list(title = 'Score'))
 ```
 
