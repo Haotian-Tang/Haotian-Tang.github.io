@@ -11,7 +11,7 @@ output:
 
 My name is Haotian Tang (Synco). I graduated from the University of Toronto and am currently pursuing the degree of master of science in biostatistics. The specific track is statistical genetics. I am very interested in how we can use mathematical modeling and statistical analyis to dissect genetics. 
 
-# Academic and Professional Experiences
+# Academic Experiences
 
 - Investigating How CYP450- and sEH-associated Pathways Play a Role in Alzheimer’s Disease
 
