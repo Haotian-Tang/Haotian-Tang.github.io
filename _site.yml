@@ -3,12 +3,9 @@ output_dir: "."
 navbar:
   title: "Home"
   left: 
-    - text: "Self Info"
-      href: Self_Info.html
-    - text: "Plotly"
-      href: plotly.html
-    - text: "Dashboard"
-      href: Dashboard.html
+    - text: "Dataset"
+      href: Dataset.html
+
   right:
     - text: "About"
       href: about.html
