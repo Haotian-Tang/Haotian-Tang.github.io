@@ -1,0 +1,84 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+In this page, I am trying to make plots using plotly. 
+
+```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(tidyverse)
+library(plotly)
+library(p8105.datasets)
+
+data(rest_inspec)
+inspect = rest_inspec
+```
+
+# Data Clean
+
+First let's clean and tidy data. Since the dataset is too large, I will only focus on Chinese restaurants. 
+
+```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+inspect |> 
+  janitor::clean_names() 
+chinese_restaurants = subset(inspect, cuisine_description == "Chinese") |> 
+  drop_na(score) |> 
+  drop_na(boro)
+```
+
+# Bar Plot
+
+Then I want to check those restaurants with more than 50 inspections using a bar plot. 
+
+```{r}
+inspection_counts = chinese_restaurants |>
+  group_by(dba) |>
+  summarise(inspection_count = n())
+
+filtered_inspection_counts = inspection_counts |>
+  filter(inspection_count > 50) |>
+  arrange(inspection_count) |>
+  mutate(dba = fct_inorder(dba))
+
+plot_ly(filtered_inspection_counts, x = ~dba, y = ~inspection_count, type = 'bar') |>
+  layout(title = 'Number of Inspections per Restaurant (More than 50 Inspections)',
+         xaxis = list(title = 'Restaurant', tickangle = -45),
+         yaxis = list(title = 'Number of Inspections'))
+
+```
+
+# Box Plot
+
+Then I make a boxplot of the score of different boroughs in New York. 
+
+```{r}
+restaurant_score = chinese_restaurants |>
+  select(boro, score) |>
+  filter(!is.na(score))
+
+plot_ly(restaurant_score, y = ~score, color = ~boro, type = 'box') |>
+  layout(title = 'Score Distribution by Borough',
+         yaxis = list(title = 'Score'),
+         xaxis = list(title = 'Borough'))
+```
+
+# Line Plot
+
+Then I make a line plot of the restaurant which has the most inspections and show how its score changes over those years. 
+
+```{r}
+no_1_chinese_data = chinese_restaurants |>
+  filter(grepl("NO. 1 CHINESE RESTAURANT", dba)) |>
+  arrange(as.Date(grade_date, format = "%m/%d/%Y")) |>
+  mutate(score = as.numeric(score))
+
+plot_ly(no_1_chinese_data, x = ~grade_date, y = ~score, type = 'scatter', mode = 'lines+markers',
+                     line = list(shape = "spline")) |>
+  layout(title = 'Score Changes Over Time for No. 1 Chinese Restaurant',
+         xaxis = list(title = 'Date'),
+         yaxis = list(title = 'Score'))
+```
+

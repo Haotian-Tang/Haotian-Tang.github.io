@@ -1,5 +1,5 @@
 ---
-title: "Unlocking the Mystery: Are NYC Students' Weights Telling a Hidden Story"
+title: "Haotian Tang's Website"
 output: 
   html_document:
     toc: true
@@ -7,9 +7,19 @@ output:
     theme: cerulean
 ---
 
-# Home
+Welcome to my website. Feel free to click icons and links to know more about me!
 
+# About me
 
+[Self Info](Self_Info.html)
+
+[GitHub](https://github.com/Haotian-Tang)
+
+[Contact](contact.html)
+
+[Plotly](plotly.html)
+
+[Dashboard](Dashboard.html)
 
 
 
