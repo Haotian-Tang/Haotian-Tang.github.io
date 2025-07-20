@@ -1,0 +1,61 @@
+---
+title: "Education"
+output: html_document
+---
+<main class="container py-4 education-section">
+
+  <style>
+    .education-section {
+      font-size: 2rem;      /* base font 150% */
+      line-height: 1.8;       /* more breathing room */
+    }
+
+    .education-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .education-list > li {
+      position: relative;
+      margin-bottom: 2rem;    /* space between each degree */
+      padding-left: 2.5rem;   /* room for the big bullet */
+    }
+    .education-list > li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5rem;        /* large bullet */
+      line-height: 2.3;         
+      color: #000;
+    }
+
+    /* slightly smaller nested bullets, if you want */
+    .education-list li li {
+      margin-top: 0.5rem;
+      font-size: 1.75rem;
+      padding-left: 1.25rem;
+      list-style: disc;
+    }
+  </style>
+
+  <ul class="education-list">
+    <li>
+      <strong>Honours Bachelor of Science, University of Toronto</strong>
+      <ul>
+        <li>Specialist: Pharmacology</li>
+        <li>Major: Genome Biology</li>
+        <li>Minor: Mathematics</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Master of Science, Columbia University</strong>
+      <ul>
+        <li>Track: Statistical Genetics</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Doctor of Philosophy</strong>
+    </li>
+  </ul>
+</main>

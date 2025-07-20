@@ -12,11 +12,13 @@ navbar:
       text: Publications
     - href: teaching.html
       text: Teaching
-    - href: blog.html
-      text: Blog
   right:
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/syncotang/
+    - icon: fa-brands fa-orcid
+      href: https://orcid.org/0009-0000-2410-9092
     - icon: fa-github fa-lg
       href: http://github.com/Haotian-Tang/
 output:
   html_document:
-    theme: cerulean
+    theme: flatly

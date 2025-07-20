@@ -1,0 +1,49 @@
+---
+title: "Teaching"
+output: html_document
+---
+<main class="container py-4 teaching-section">
+
+  <style>
+    /* Overall section font & spacing */
+    .teaching-section {
+      font-size: 2rem;
+      line-height: 1.8;
+    }
+    /* Remove default bullets & padding */
+    .teaching-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    /* Top-level items: custom big bullets */
+    .teaching-list > li {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 2.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .teaching-list > li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      top: 0em;
+      font-size: 1.5rem;
+      line-height: 2.3;
+      color: #000;
+    }
+  </style>
+
+  <ul class="teaching-list">
+    <li>
+      <strong>Teaching Assistant, Department of Biostatistics, Columbia University</strong>
+    </li>
+    <li>
+      <strong>Teaching Assistant, Department of Environmental Health Sciences, Columbia University</strong>
+    </li>
+    <li>
+      <strong>Teacher & Lecturer, NewChannel International Education Group Limited</strong>
+    </li>
+  </ul>
+</main>

@@ -1,0 +1,88 @@
+---
+title: "Research"
+output: html_document
+---
+<main class="container py-4 research-section">
+
+  <style>
+    /* — Overall section font & spacing — */
+    .research-section {
+      font-size: 2rem;      /* ~32px base text */
+      line-height: 1.8;     /* comfortable spacing */
+    }
+    /* — Remove default bullets & padding — */
+    .research-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    /* — Top-level items: custom big bullets — */
+    .research-list > li {
+      position: relative;
+      margin-bottom: 2.5rem;   /* space between items */
+      padding-left: 2.5rem;    /* room for the bullet */
+    }
+    .research-list > li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5rem;       /* ~48px bullet */
+      line-height: 2.3;
+      color: #000;
+    }
+    /* — Nested items (supervisor) — */
+    .research-list li li {
+      list-style: none
+      margin-top: 0.5rem;
+      margin-left: 1.75rem;       /* indent under text */
+      font-size: 1.5rem;       /* ~24px for nested */
+    }
+  </style>
+
+  <ul class="research-list">
+    <li>
+      <strong>Defined new standards for multi-omics data integration to distinguish disease subtypes and improve diagnosis and treatment</strong>
+      <ul>
+        <li>Supervisor: Shuang Wang, PhD – Columbia University</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Demonstrated the utility of angle-based transfer learning on “All of Us” breast & prostate cancer data to identify key risk factors</strong>
+      <ul>
+        <li>Supervisor: Tian Gu, PhD – Columbia University</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Identified significant predictors of vision-related quality-of-life improvement via multivariable regression of NEI-VFQ-9 data</strong>
+      <ul>
+        <li>Supervisor: Prakash Gorroochurn, PhD &amp; Lisa Hark, PhD, MBA – Columbia University</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Revealed distinct demographic and clinical subtypes in AMD vs. DR through comparative analysis</strong>
+      <ul>
+        <li>Supervisor: Alan Morse, PhD – Columbia University</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Uncovered key SNPs in CYP450 and sEH lipid-metabolism pathways associated with Alzheimer’s disease progression</strong>
+      <ul>
+        <li>Supervisor: Walter Swardfager, PhD – University of Toronto</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Characterized species-specific duckweed-microbiome interactions using image analysis techniques</strong>
+      <ul>
+        <li>Supervisor: Megan Frederickson, PhD – University of Toronto</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Quantified terrestrial snail diversity patterns across Tioman Island habitats to inform forest biodiversity assessments</strong>
+      <ul>
+        <li>Supervisor: Tan Siong Kiat – National University of Singapore</li>
+      </ul>
+    </li>
+  </ul>
+
+</main>

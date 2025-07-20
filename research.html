@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Biostatistician | Statistical Geneticist" />
 
 
-<title>Haotian “Synco” Tang</title>
+<title>Research</title>
 
 <script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -61,7 +60,6 @@ if (window.hljs) {
 
 
 
-<link rel="stylesheet" href="styles.css" type="text/css" />
 
 
 
@@ -261,6 +259,9 @@ $(document).ready(function () {
 <li>
   <a href="teaching.html">Teaching</a>
 </li>
+<li>
+  <a href="other.html">Other</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -290,86 +291,117 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Haotian “Synco” Tang</h1>
-<h4 class="author">Biostatistician | Statistical Geneticist</h4>
+<h1 class="title toc-ignore">Research</h1>
 
 </div>
 
 
-<div class="container" style="
-     margin-left: 0;
-     margin-top: 20px;
-     margin-bottom: 40px;
-     background-color: rgba(255,255,255,0.9);
-     padding: 20px;
-     border-radius: 8px;
-   ">
-  <div class="row">
-    <!-- PHOTO & CONTACTS -->
-    <div class="col-md-3 text-left" style="margin-top:25px;">
-      <img src="profile.JPG"
-           alt="Haotian Tang"
-           class="img-fluid rounded-circle mb-3">
-      <ul class="list-unstyled">
-        <li><strong>Email:</strong>
-            <a href="mailto:syncotang@gmail.com">
-              syncotang@gmail.com
-            </a>
-        </li>
-        <li><strong>Phone:</strong> +86 15605512998</li>
-        <li><strong>Affiliation:</strong>
-            M.S. Biostatistics, Columbia University
-        </li>
-        <li><strong>ORCID:</strong>
-            <a href="https://orcid.org/0009-0000-2410-9092" target="_blank">
-              0009-0000-2410-9092
-            </a>
-        </li>
-        <li><strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/syncotang/" target="_blank">
-              syncotang
-            </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- MAIN CONTENT (capped at 8/12 width) -->
-    <div class="col-md-7">
-      <h2>Education</h2>
-      <p>
-        I graduated from University of Toronto in 2022 with a focus on pharmacology, genome biology, and mathematics. During undergraduate, I was an exchange student at the the National University of Singapore and University of Oxford. I obtained my Master of Science in Biostatistics at Columbia University in 2025, specializing in statistical genetics. I will begin my PhD in 2026 with a focus on precision medicine through drug–genomics integration.
-      </p>
-
-      <h2>Publications</h2>
-      <ul class="list-unstyled">
-        <li>
-          Hark, L.A., Gorroochurn, P., <strong>Tang, H.</strong>, <i>et al</i>.  
-          Improvement in vision-related quality-of-life using the NEI-VFQ-9 over 1-year in the Manhattan Vision Screening and Follow-up Study (NYC-SIGHT).  
-          Graefe’s Arch Clin Exp Ophthalmol (2025).  
-          <a href="https://doi.org/10.1007/s00417-024-06727-z" target="_blank">
-            https://doi.org/10.1007/s00417-024-06727-z
-          </a>
-        </li>
-        <li style="margin-top:0.5em;">
-          Morse, A.R., Hark, L.A., Seiple, W.H., Gorroochurn, P., <strong>Tang, H.</strong>, <i>et al</i>.  
-          Association of behavioral factors with activation in patients with age-related macular degeneration or diabetic retinopathy. Currently under review by Clinical Ophthalmology (2025).
-        </li>
-      </ul>
-        <h2>Research Interests</h2>
-  <p>
-    Multidisciplinary studies associated with medicine and AI, precision medicine, genomics, pharmacology.
-  </p>
-        <h2>Resume</h2>
-  <p>
-      <a href="Resume.pdf" target="_blank" rel="noopener">
-      Haotian Tang
-  </p>
-    </div>
-  </div>
-</div>
-
-
- 
+<main class="container py-4 research-section">
+<style>
+    /* — Overall section font & spacing — */
+    .research-section {
+      font-size: 2rem;      /* ~32px base text */
+      line-height: 1.8;     /* comfortable spacing */
+    }
+    /* — Remove default bullets & padding — */
+    .research-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    /* — Top-level items: custom big bullets — */
+    .research-list > li {
+      position: relative;
+      margin-bottom: 2.5rem;   /* space between items */
+      padding-left: 2.5rem;    /* room for the bullet */
+    }
+    .research-list > li::before {
+      content: "●";
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5rem;       /* ~48px bullet */
+      line-height: 2.3;
+      color: #000;
+    }
+    /* — Nested items (supervisor) — */
+    .research-list li li {
+      list-style: none
+      margin-top: 0.5rem;
+      margin-left: 1.75rem;       /* indent under text */
+      font-size: 1.5rem;       /* ~24px for nested */
+    }
+  </style>
+<ul class="research-list">
+<li>
+<strong>Defined new standards for multi-omics data integration to
+distinguish disease subtypes and improve diagnosis and
+treatment</strong>
+<ul>
+<li>
+Supervisor: Shuang Wang, PhD – Columbia University
+</li>
+</ul>
+</li>
+<li>
+<strong>Demonstrated the utility of angle-based transfer learning on
+“All of Us” breast &amp; prostate cancer data to identify key risk
+factors</strong>
+<ul>
+<li>
+Supervisor: Tian Gu, PhD – Columbia University
+</li>
+</ul>
+</li>
+<li>
+<strong>Identified significant predictors of vision-related
+quality-of-life improvement via multivariable regression of NEI-VFQ-9
+data</strong>
+<ul>
+<li>
+Supervisor: Prakash Gorroochurn, PhD &amp; Lisa Hark, PhD, MBA –
+Columbia University
+</li>
+</ul>
+</li>
+<li>
+<strong>Revealed distinct demographic and clinical subtypes in AMD
+vs. DR through comparative analysis</strong>
+<ul>
+<li>
+Supervisor: Alan Morse, PhD – Columbia University
+</li>
+</ul>
+</li>
+<li>
+<strong>Uncovered key SNPs in CYP450 and sEH lipid-metabolism pathways
+associated with Alzheimer’s disease progression</strong>
+<ul>
+<li>
+Supervisor: Walter Swardfager, PhD – University of Toronto
+</li>
+</ul>
+</li>
+<li>
+<strong>Characterized species-specific duckweed-microbiome interactions
+using image analysis techniques</strong>
+<ul>
+<li>
+Supervisor: Megan Frederickson, PhD – University of Toronto
+</li>
+</ul>
+</li>
+<li>
+<strong>Quantified terrestrial snail diversity patterns across Tioman
+Island habitats to inform forest biodiversity assessments</strong>
+<ul>
+<li>
+Supervisor: Tan Siong Kiat – National University of Singapore
+</li>
+</ul>
+</li>
+</ul>
+</main>
 
 
 
