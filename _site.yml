@@ -1,10 +1,11 @@
 name: "Haotian Tang"
 output_dir: "."
 navbar:
-  title: "Home"
   left:
     - href: index.html
-      text: About
+      text: Home
+    - href: education.html
+      text: Education
     - href: research.html
       text: Research
     - href: publications.html

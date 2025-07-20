@@ -9,7 +9,7 @@ output:
 
 ```{=html}
 <div class="container" style="
-     margin-left: -135px;
+     margin-left: -40px;
      margin-top: 20px;
      margin-bottom: 40px;
      background-color: rgba(255,255,255,0.9);
