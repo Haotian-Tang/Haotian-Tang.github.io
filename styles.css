@@ -1,5 +1,27 @@
 /* styles.css */
 
+
+#header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+#header .title {
+  font-size: 3em;
+  margin-bottom: 0.5em;  
+}
+#header .author {
+  font-size: 1.25em;       
+  margin-top: 0.5em;       
+  display: block;          
+}
+
+#header .date {
+  display: block;       
+  margin: 0 auto;       
+}
+
+
 body {
   background: none !important;
   position: relative;
@@ -15,6 +37,8 @@ body::before {
   opacity: 0.25;               
   z-index: -1;
 }
+
+
 
 
 

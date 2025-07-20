@@ -1,4 +1,6 @@
 ---
+title: "Haotian “Synco” Tang"
+author: "Biostatistician | Statistical Geneticist"
 output:
   html_document:
     theme: flatly
@@ -8,8 +10,9 @@ output:
 
 
 ```{=html}
+
 <div class="container" style="
-     margin-left: 40px;
+     margin-left: 0px;
      margin-top: 20px;
      margin-bottom: 40px;
      background-color: rgba(255,255,255,0.9);
@@ -46,12 +49,6 @@ output:
       </ul>
     </div>
 
-    <!-- NAME, TAGLINE & BIO -->
-<div class="col-md-9">
-  <h1>Haotian “Synco” Tang</h1>
-  <!-- Larger tagline -->
-   <p><em>Biostatistician | Statistical Geneticist</em></p>
-  </h3>
 
   <!-- Education section -->
   <h2>Education</h2>
@@ -65,7 +62,7 @@ output:
   <h2>Publications</h2>
   <ul class="list-unstyled">
     <li>
-      Hark, L.A., Gorroochurn, P., <strong>Tang, H.</strong>, _et al._  
+      Hark, L.A., Gorroochurn, P., <strong>Tang, H.</strong>, et al.  
       Improvement in vision-related quality-of-life using the NEI-VFQ-9 over 1-year  
       in the Manhattan Vision Screening and Follow-up Study (NYC-SIGHT).  
       Graefe’s Arch Clin Exp Ophthalmol (2025).  
@@ -74,7 +71,7 @@ output:
 </a>
     </li>
     <li style="margin-top:0.5em;">
-      Morse, A.R., Hark, L.A., Seiple, W.H., Gorroochurn, P., <strong>Tang, H.</strong>, _et al._  
+      Morse, A.R., Hark, L.A., Seiple, W.H., Gorroochurn, P., <strong>Tang, H.</strong>, et al.  
       Association of behavioral factors with activation in patients with age-related  
       macular degeneration or diabetic retinopathy. Currently under review by  
       Clinical Ophthalmology (2025).
