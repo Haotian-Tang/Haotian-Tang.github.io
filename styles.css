@@ -27,7 +27,6 @@ body {
   position: relative;
 }
 
-/* Full-page, non-zoomed, more transparent background via pseudo-element */
 body::before {
   content: "";
   position: fixed;
