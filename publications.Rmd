@@ -2,6 +2,6 @@
 title: "Publication"
 output: html_document
 ---
-- Hark, L.A., Gorroochurn, P., **Tang, H.**, _et al._ Improvement in vision-related quality-of-life using the NEI-VFQ-9 over 1 year in the Manhattan Vision Screening and Follow-up Study (NYC-SIGHT).  Graefe’s Archive for Clinical and Experimental Ophthalmology (2025). https://doi.org/10.1007/s00417-024-06727-z
-
-- Morse, A.R., Hark, L.A., Seiple, W.H., Gorroochurn, P., **Tang, H.**, _et al._ Association of behavioral factors with activation in patients with age-related macular degeneration or diabetic retinopathy. Clinical Ophthalmology (under review, 2025).
+•	Hark, L. A., Gorroochurn, P., Tang, H., et al. (2025). Improvement in vision-related quality-of-life using the NEI-VFQ-9 over 1-year in the Manhattan Vision Screening and Follow-up Study (NYC-SIGHT). Graefe's archive for clinical and experimental ophthalmology, 263(7), 2069–2079. https://doi.org/10.1007/s00417-024-06727-z 
+•	Morse, A. R., Hark, L. A., Seiple, W. H., Gorroochurn, P., Tang, H., et al. (2025). Association of behavioral factors with activation in patients with age-related macular degeneration or diabetic retinopathy. Clinical Ophthalmology, 19, 3059–3069. https://doi.org/10.2147/OPTH.S542352 
+•	Morse, A. R., Hark, L. A., Seiple, W., Gorroochurn, P., Tang, H., et al. (2025) Modifying locus of control beliefs may improve activation in patients with age-related macular degeneration or diabetic retinopathy. Investigative Ophthalmology & Visual Science, 66(8), 699. https://iovs.arvojournals.org/article.aspx?articleid=2805311 
