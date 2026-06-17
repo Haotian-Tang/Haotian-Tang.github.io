@@ -18,7 +18,7 @@ navbar:
     - icon: fa-brands fa-orcid
       href: https://orcid.org/0009-0000-2410-9092
     - icon: fa-github fa-lg
-      href: http://github.com/Haotian-Tang/
+      href: https://github.com/synco-tang 
 output:
   html_document:
     theme: flatly

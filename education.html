@@ -13,7 +13,7 @@
 
 <title>Education</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -32,8 +32,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -274,7 +274,7 @@ $(document).ready(function () {
   </a>
 </li>
 <li>
-  <a href="http://github.com/Haotian-Tang/">
+  <a href="https://github.com/synco-tang">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -294,40 +294,36 @@ $(document).ready(function () {
 
 
 <main class="container py-4 education-section">
-<style>
-    .education-section {
-      font-size: 2rem;      /* base font 150% */
-      line-height: 1.8;       /* more breathing room */
-    }
+<p><style> .education-section { font-size: 2rem; /* base font 150% <em>/
+line-height: 1.8; /</em> more breathing room */ }</p>
+<pre><code>.education-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.education-list &gt; li {
+  position: relative;
+  margin-bottom: 2rem;    /* space between each degree */
+  padding-left: 2.5rem;   /* room for the big bullet */
+}
+.education-list &gt; li::before {
+  content: &quot;●&quot;;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;        /* large bullet */
+  line-height: 2.3;         
+  color: #000;
+}
 
-    .education-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .education-list > li {
-      position: relative;
-      margin-bottom: 2rem;    /* space between each degree */
-      padding-left: 2.5rem;   /* room for the big bullet */
-    }
-    .education-list > li::before {
-      content: "●";
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 1.5rem;        /* large bullet */
-      line-height: 2.3;         
-      color: #000;
-    }
-
-    /* slightly smaller nested bullets, if you want */
-    .education-list li li {
-      margin-top: 0.5rem;
-      font-size: 1.75rem;
-      padding-left: 1.25rem;
-      list-style: disc;
-    }
-  </style>
+/* slightly smaller nested bullets, if you want */
+.education-list li li {
+  margin-top: 0.5rem;
+  font-size: 1.75rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}</code></pre>
+<p></style></p>
 <ul class="education-list">
 <li>
 <strong>Honours Bachelor of Science, University of Toronto</strong>
