@@ -293,64 +293,272 @@ $(document).ready(function () {
 </div>
 
 
-<main class="container py-4 education-section">
-<p><style> .education-section { font-size: 2rem; /* base font 150% <em>/
-line-height: 1.8; /</em> more breathing room */ }</p>
-<pre><code>.education-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.education-list &gt; li {
-  position: relative;
-  margin-bottom: 2rem;    /* space between each degree */
-  padding-left: 2.5rem;   /* room for the big bullet */
-}
-.education-list &gt; li::before {
-  content: &quot;●&quot;;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.5rem;        /* large bullet */
-  line-height: 2.3;         
-  color: #000;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  background: #fafafa;
 }
 
-/* slightly smaller nested bullets, if you want */
-.education-list li li {
-  margin-top: 0.5rem;
-  font-size: 1.75rem;
-  padding-left: 1.25rem;
-  list-style: disc;
-}</code></pre>
-<p></style></p>
-<ul class="education-list">
-<li>
-<strong>Honours Bachelor of Science, University of Toronto</strong>
-<ul>
-<li>
-Specialist: Pharmacology
-</li>
-<li>
-Major: Genome Biology
-</li>
-<li>
-Minor: Mathematics
-</li>
-</ul>
-</li>
-<li>
-<strong>Master of Science, Columbia University</strong>
-<ul>
-<li>
-Track: Statistical Genetics
-</li>
-</ul>
-</li>
-<li>
-<strong>Doctor of Philosophy</strong>
-</li>
-</ul>
+.education-page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 24px 72px;
+  font-family: "Inter", sans-serif;
+  color: #1f2933;
+}
+
+.edu-hero {
+  margin-bottom: 38px;
+  padding: 34px 38px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #f7f1e8 0%, #eef4ff 52%, #ffffff 100%);
+  border: 1px solid rgba(30, 64, 175, 0.12);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.edu-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #7c5c2e;
+  margin-bottom: 8px;
+}
+
+.edu-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.5rem;
+  line-height: 1.05;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: #111827;
+}
+
+.edu-summary {
+  max-width: 800px;
+  font-size: 1.5rem;
+  line-height: 1.75;
+  color: #4b5563;
+  margin: 0;
+}
+
+.edu-timeline {
+  position: relative;
+  margin-top: 34px;
+  padding-left: 28px;
+}
+
+.edu-timeline::before {
+  content: "";
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, #1d4ed8, #0f766e, #b08968);
+  border-radius: 99px;
+}
+
+.edu-card {
+  position: relative;
+  margin-bottom: 26px;
+  padding: 28px 30px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.07);
+}
+
+.edu-card::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: 34px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 4px solid #1d4ed8;
+  box-shadow: 0 0 0 5px rgba(29, 78, 216, 0.13);
+}
+
+.edu-card.ms::before {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 5px rgba(15, 118, 110, 0.13);
+}
+
+.edu-card.bs::before {
+  border-color: #b08968;
+  box-shadow: 0 0 0 5px rgba(176, 137, 104, 0.13);
+}
+
+.edu-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.edu-degree {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.85rem;
+  line-height: 1.15;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.edu-date {
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6b7280;
+  background: #f3f4f6;
+  border-radius: 999px;
+  padding: 7px 13px;
+}
+
+.edu-school {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.edu-description {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0 0 14px;
+}
+
+.edu-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.edu-tag {
+  display: inline-block;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: #475569;
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .education-page {
+    padding: 36px 16px 56px;
+  }
+
+  .edu-hero {
+    padding: 28px 24px;
+  }
+
+  .edu-title {
+    font-size: 2.45rem;
+  }
+
+  .edu-topline {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .edu-date {
+    white-space: normal;
+  }
+
+  .edu-card {
+    padding: 24px 22px;
+  }
+}
+</style>
+
+<main class="education-page">
+
+<section class="edu-hero">
+  <div class="edu-kicker">Academic Training</div>
+  <h1 class="edu-title">Education</h1>
+  <p class="edu-summary">
+    My academic training spans biostatistics, statistical genetics, pharmacology, genome biology, and mathematics.
+    I am currently a PhD student at Mohamed bin Zayed University of Artificial Intelligence, supervised by
+    Dr. Jun Wen and Dr. Eduardo Beltrame.
+  </p>
+</section>
+
+<section class="edu-timeline">
+
+<article class="edu-card phd">
+  <div class="edu-topline">
+    <h2 class="edu-degree">Doctor of Philosophy</h2>
+    <div class="edu-date">Current</div>
+  </div>
+  <div class="edu-school">
+    Mohamed bin Zayed University of Artificial Intelligence · Abu Dhabi, United Arab Emirates
+  </div>
+  <p class="edu-description">
+    I am pursuing doctoral research at the intersection of artificial intelligence, biomedical informatics,
+    pharmacogenomics, single-cell omics, and multi-omics integration. My PhD training is supervised by
+    Dr. Jun Wen and Dr. Eduardo Beltrame.
+  </p>
+  <div class="edu-tags">
+    <span class="edu-tag">Artificial Intelligence</span>
+    <span class="edu-tag">Pharmacogenomics</span>
+    <span class="edu-tag">Single-cell Omics</span>
+    <span class="edu-tag">Multi-omics Integration</span>
+  </div>
+</article>
+
+<article class="edu-card ms">
+  <div class="edu-topline">
+    <h2 class="edu-degree">Master of Science in Biostatistics</h2>
+    <div class="edu-date">Sep. 2023 – May 2025</div>
+  </div>
+  <div class="edu-school">
+    Columbia University · New York, United States
+  </div>
+  <p class="edu-description">
+    I completed my M.S. in Biostatistics with a concentration in Statistical Genetics and a GPA of 3.94/4.00.
+    My graduate training strengthened my foundation in statistical modeling, genetic epidemiology,
+    computational data analysis, and biomedical research methodology.
+  </p>
+  <div class="edu-tags">
+    <span class="edu-tag">Biostatistics</span>
+    <span class="edu-tag">Statistical Genetics</span>
+    <span class="edu-tag">Statistical Modeling</span>
+    <span class="edu-tag">Biomedical Data Science</span>
+  </div>
+</article>
+
+<article class="edu-card bs">
+  <div class="edu-topline">
+    <h2 class="edu-degree">Honours Bachelor of Science</h2>
+    <div class="edu-date">Sep. 2018 – Jun. 2022</div>
+  </div>
+  <div class="edu-school">
+    University of Toronto · Toronto, Canada
+  </div>
+  <p class="edu-description">
+    I completed an Honours Bachelor of Science with a Specialist in Pharmacology, a Major in Genome Biology,
+    and a Minor in Mathematics. This interdisciplinary training provided the biological and quantitative foundation
+    for my current research interests in computational genetics, genomics, and precision medicine.
+  </p>
+  <div class="edu-tags">
+    <span class="edu-tag">Pharmacology</span>
+    <span class="edu-tag">Genome Biology</span>
+    <span class="edu-tag">Mathematics</span>
+    <span class="edu-tag">Precision Medicine</span>
+  </div>
+</article>
+
+</section>
+
 </main>
 
 
