@@ -1,24 +1,8 @@
 name: "Haotian Tang"
 output_dir: "."
-navbar:
-  left:
-    - href: index.html
-      text: Home
-    - href: education.html
-      text: Education
-    - href: research.html
-      text: Research
-    - href: publications.html
-      text: Publications
-    - href: teaching.html
-      text: Teaching
-  right:
-    - icon: fa-linkedin fa-lg
-      href: https://www.linkedin.com/in/syncotang/
-    - icon: fa-brands fa-orcid
-      href: https://orcid.org/0009-0000-2410-9092
-    - icon: fa-github fa-lg
-      href: https://github.com/synco-tang 
 output:
   html_document:
-    theme: flatly
+    template: "_templates/page.html"
+    self_contained: false
+    mathjax: null
+    highlight: null

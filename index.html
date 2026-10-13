@@ -1,504 +1,133 @@
-<!DOCTYPE html>
-
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
-
-
-<meta name="author" content="Biostatistics · Computational Genomics · Precision Medicine" />
-
-
-<title>Haotian Tang</title>
-
-<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-<link rel="stylesheet" href="styles.css" type="text/css" />
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
-}
-</style>
-
-
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
-  }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-
-
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Haotian Tang is a PhD student in Computational Biology at MBZUAI, working on statistical genomics, single-cell analysis, and pharmacogenomics.">
+  <meta name="author" content="Haotian Tang">
+  <meta name="theme-color" content="#ffffff">
+  <title>Haotian Tang | Computational Biology</title>
+  <link rel="canonical" href="https://haotian-tang.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Haotian Tang">
+  <meta property="og:title" content="Haotian Tang | Computational Biology">
+  <meta property="og:description" content="Haotian Tang is a PhD student in Computational Biology at MBZUAI, working on statistical genomics, single-cell analysis, and pharmacogenomics.">
+  <meta property="og:url" content="https://haotian-tang.github.io/">
+  <meta property="og:image" content="https://haotian-tang.github.io/img/portrait.jpg">
+  <meta property="og:image:alt" content="Haotian Tang">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Haotian Tang","url":"https://haotian-tang.github.io/","jobTitle":"PhD Student in Computational Biology","affiliation":{"@type":"CollegeOrUniversity","name":"Mohamed bin Zayed University of Artificial Intelligence"},"sameAs":["https://orcid.org/0009-0000-2410-9092","https://www.linkedin.com/in/syncotang/","https://github.com/Haotian-Tang"]}
+  </script>
 </head>
-
-<body>
-
-
-<div class="container-fluid main-container">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html"></a>
+<body data-page="index">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="index.html">Haotian Tang<span class="site-dot" aria-hidden="true">.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-index" href="index.html">Home</a>
+        <a class="nav-research" href="research.html">Research</a>
+        <a class="nav-publications" href="publications.html">Publications</a>
+        <a class="nav-experience" href="experience.html">Experience</a>
+        <a class="nav-cv" href="Resume.pdf">CV <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="index.html">Home</a>
-</li>
-<li>
-  <a href="education.html">Education</a>
-</li>
-<li>
-  <a href="research.html">Research</a>
-</li>
-<li>
-  <a href="publications.html">Publications</a>
-</li>
-<li>
-  <a href="teaching.html">Teaching</a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="https://www.linkedin.com/in/syncotang/">
-    <span class="fa fa-linkedin fa-lg"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://orcid.org/0009-0000-2410-9092">
-    <span class="fa fa-brands fa-orcid"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://github.com/synco-tang">
-    <span class="fa fa-github fa-lg"></span>
-     
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
-
-<div id="header">
-
-
-
-<h1 class="title toc-ignore">Haotian Tang</h1>
-<h4 class="author">Biostatistics · Computational Genomics · Precision
-Medicine</h4>
-
-</div>
-
-
-<div class="site-shell">
-  <section class="hero-section">
-    <div class="hero-grid">
-      <aside class="profile-card">
-        <div class="profile-photo-wrap">
-          <img src="img/portrait.jpg"
-               alt="Portrait of Haotian Tang"
-               class="profile-photo">
-        </div>
-        <h1>Haotian Tang</h1>
-        <p class="subtitle">PhD Student, MBZUAI</p>
-        <p class="mini-bio">
-          Biostatistician and computational genomics researcher working at the interface of pharmacogenomics,
-          adverse drug reaction prediction, and AI-driven biomedical discovery.
-        </p>
-        <div class="contact-stack">
-          <a href="mailto:syncotang@gmail.com">syncotang@gmail.com</a>
-          <a href="https://orcid.org/0009-0000-2410-9092" target="_blank" rel="noopener">ORCID</a>
-          <a href="https://www.linkedin.com/in/syncotang/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="Resume.pdf" target="_blank" rel="noopener">Resume</a>
-        </div>
-      </aside>
-
-      <main class="hero-content">
-        <p class="eyebrow">Single-cell omics · Pharmacogenomics · Multi-omics integration</p>
-        <h2>Building interpretable AI systems for genomics and precision medicine.</h2>
-        <p class="lead-text">
-          I completed my M.S. in Biostatistics at Columbia University, specializing in statistical genetics.
-          I am a PhD student at Mohamed bin Zayed University of Artificial Intelligence (MBZUAI),
-          supervised by Dr. Jun Wen and Dr. Eduardo Beltrame. My current work focuses on modeling structured
-          biomedical relationships among drugs, genes, adverse drug reactions, diseases, and genetic variants.
-        </p>
-        <div class="button-row">
-          <a class="button-primary" href="#publications">View publications</a>
-          <a class="button-secondary" href="#research">Research focus</a>
-        </div>
-      </main>
+  </header>
+<main id="main" class="container">
+  <section class="profile" aria-labelledby="profile-title">
+    <div class="profile-copy">
+      <p class="eyebrow">Computational biology · Biostatistics</p>
+      <h1 id="profile-title">Haotian Tang</h1>
+      <p class="role">PhD Student in Computational Biology</p>
+      <p class="affiliation">Mohamed bin Zayed University of Artificial Intelligence · Abu Dhabi, UAE</p>
+      <div class="intro">
+        <p>I use statistics, genomics, and machine learning to study human health. My research spans genetic variation in neurological disease, single-cell immune responses, and the prediction of adverse drug reactions.</p>
+        <p>I am a PhD student at MBZUAI, supervised by Eduardo Beltrame and Jun Wen. Previously, I earned an M.S. in Biostatistics at Columbia University and an Honours B.Sc. at the University of Toronto, with training in pharmacology, genome biology, and mathematics.</p>
+      </div>
+      <div class="profile-links">
+        <a class="button" href="Resume.pdf">Download CV <span aria-hidden="true">↗</span></a>
+        <a href="mailto:Haotian.Tang@mbzuai.ac.ae">Email me <span aria-hidden="true">↗</span></a>
+        <a href="https://orcid.org/0009-0000-2410-9092">ORCID <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
+    <figure class="portrait">
+      <img src="img/portrait.jpg" width="1284" height="1704" alt="Haotian Tang" fetchpriority="high">
+      <figcaption>Haotian Tang · MBZUAI</figcaption>
+    </figure>
   </section>
 
-  <section id="research" class="content-section">
+  <section class="section" aria-labelledby="research-title">
     <div class="section-heading">
-      <p class="eyebrow">Research</p>
-      <h2>Current focus</h2>
+      <div><p class="eyebrow">Current work</p><h2 id="research-title">Research at a glance</h2></div>
+      <a class="text-link" href="research.html">Explore my research <span aria-hidden="true">→</span></a>
     </div>
-    <div class="card-grid three-columns">
-      <div class="info-card highlight-card">
-        <h3>HyperADRs</h3>
-        <p>
-          Hierarchical hypergraph modeling for drug-gene-ADR prediction, with emphasis on biologically grounded
-          hyperedges, ADR categorization, and interpretable query-conditioned prediction.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>Variant-level modeling</h3>
-        <p>
-          Tensor-based representation of variant-indexed directional co-occurrence structures to quantify genetic
-          effects on drug-disease-ADR relationships.
-        </p>
-      </div>
-      <div class="info-card">
-        <h3>Single-cell and multi-omics</h3>
-        <p>
-          Integration of single-cell, population-level, and clinical data to study biological heterogeneity and
-          precision-medicine mechanisms.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="section-heading">
-      <p class="eyebrow">Education</p>
-      <h2>Academic training</h2>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <span class="timeline-date">2026–</span>
-        <div>
-          <h3>Mohamed bin Zayed University of Artificial Intelligence</h3>
-          <p>PhD student. Supervisors: Dr. Jun Wen and Dr. Eduardo Beltrame.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-date">2023–2025</span>
-        <div>
-          <h3>Columbia University</h3>
-          <p>M.S. in Biostatistics, Statistical Genetics track.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-date">2018–2022</span>
-        <div>
-          <h3>University of Toronto</h3>
-          <p>Honours B.S.; Specialist in Pharmacology, Major in Genome Biology, Minor in Mathematics.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="publications" class="content-section">
-    <div class="section-heading">
-      <p class="eyebrow">Selected publications</p>
-      <h2>Recent work</h2>
-    </div>
-    <div class="publication-list">
-      <article class="publication-card featured-publication">
-        <div class="pub-label">Preprint · equal contribution</div>
-        <h3>HyperADRs: A hierarchical hypergraph framework for drug-gene-ADR prediction</h3>
-        <p>
-          Cai, Z.*, <strong>Tang, H.*</strong>, Gao, S., Zhou, B., Zhao, J., &amp; Wen, J.
-          <em>arXiv</em>, 2512.00137, 2025.
-        </p>
-        <a href="https://arxiv.org/abs/2512.00137" target="_blank" rel="noopener">Read on arXiv</a>
+    <div class="research-grid">
+      <article class="research-summary">
+        <span class="topic-index" aria-hidden="true">01</span>
+        <h3><a href="research.html#als">Genetic variation in ALS</a></h3>
+        <p>Investigating rare variants that may disrupt RNA splicing in amyotrophic lateral sclerosis.</p>
+        <p class="evidence">Pipeline for 3,400+ whole-genome files</p>
       </article>
-
-      <article class="publication-card">
-        <h3>Improvement in vision-related quality-of-life using the NEI-VFQ-9 over 1 year</h3>
-        <p>
-          Hark, L.A., Gorroochurn, P., <strong>Tang, H.</strong>, <em>et al.</em>
-          <em>Graefe's Archive for Clinical and Experimental Ophthalmology</em>, 263, 2069–2079, 2025.
-        </p>
-        <a href="https://doi.org/10.1007/s00417-024-06727-z" target="_blank" rel="noopener">DOI</a>
+      <article class="research-summary">
+        <span class="topic-index" aria-hidden="true">02</span>
+        <h3><a href="research.html#malaria">Single-cell immune responses</a></h3>
+        <p>Studying how immune responses to malaria differ across populations and infection states.</p>
+        <p class="evidence">88,784 cells from 126 children</p>
       </article>
-
-      <article class="publication-card">
-        <h3>Association of behavioral factors with activation in patients with AMD or DR</h3>
-        <p>
-          Morse, A.R., Hark, L.A., Seiple, W.H., Gorroochurn, P., <strong>Tang, H.</strong>, <em>et al.</em>
-          <em>Clinical Ophthalmology</em>, 19, 3059–3069, 2025.
-        </p>
-        <a href="https://doi.org/10.2147/OPTH.S542352" target="_blank" rel="noopener">DOI</a>
-      </article>
-
-      <article class="publication-card">
-        <h3>Modifying locus of control beliefs may improve activation in AMD or DR</h3>
-        <p>
-          Morse, A.R., Hark, L.A., Seiple, W., Gorroochurn, P., <strong>Tang, H.</strong>, <em>et al.</em>
-          <em>Investigative Ophthalmology &amp; Visual Science</em>, 66(8), 699, 2025.
-        </p>
-        <a href="https://iovs.arvojournals.org/article.aspx?articleid=2805311" target="_blank" rel="noopener">Abstract</a>
+      <article class="research-summary">
+        <span class="topic-index" aria-hidden="true">03</span>
+        <h3><a href="research.html#hyperadrs">Machine learning for drug safety</a></h3>
+        <p>Modeling relationships between drugs, genes, and adverse reactions with HyperADRs.</p>
+        <p class="evidence">Co-first-author preprint · arXiv, 2025</p>
       </article>
     </div>
   </section>
 
-  <section class="content-section compact-section">
+  <section class="section" aria-labelledby="work-title">
     <div class="section-heading">
-      <p class="eyebrow">Methods and tools</p>
-      <h2>Technical interests</h2>
+      <div><p class="eyebrow">Selected work</p><h2 id="work-title">Publications &amp; preprints</h2></div>
+      <a class="text-link" href="publications.html">View all publications <span aria-hidden="true">→</span></a>
     </div>
-    <div class="tag-cloud">
-      <span>R</span><span>Python</span><span>Statistical genetics</span><span>Pharmacogenomics</span>
-      <span>Hypergraph neural networks</span><span>Tensor decomposition</span><span>Single-cell omics</span>
-      <span>Multi-omics integration</span><span>Precision medicine</span><span>Biomedical AI</span>
+    <div class="selected-list">
+      <article class="selected-paper">
+        <p class="paper-type">2025 · Preprint · Co-first author</p>
+        <h3><a href="https://arxiv.org/abs/2512.00137">HyperADRs: A Hierarchical Hypergraph Framework for Drug–Gene–ADR Prediction</a></h3>
+        <p>Biologically informed hypergraph learning for pharmacogenomics.</p>
+      </article>
+      <article class="selected-paper">
+        <p class="paper-type">2025 · Peer-reviewed article</p>
+        <h3><a href="https://doi.org/10.1007/s00417-024-06727-z">Vision-related quality of life in the NYC-SIGHT study</a></h3>
+        <p>Longitudinal clinical trial analysis. <em>Graefe’s Archive for Clinical and Experimental Ophthalmology.</em></p>
+      </article>
     </div>
   </section>
-</div>
 
-
-
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-
-
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
-
+  <section class="section background-section" aria-labelledby="background-title">
+    <div><p class="eyebrow">Background</p><h2 id="background-title">From pharmacology to computational biology</h2></div>
+    <div>
+      <p>My training combines biological knowledge with statistical rigor and practical computing. I work with whole-genome, single-cell, and clinical data, and have taught mathematics and supported graduate courses at Columbia.</p>
+      <a class="text-link" href="experience.html">Education &amp; experience <span aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><p class="footer-name">Haotian Tang</p><p>Computational Biology · MBZUAI</p></div>
+      <div class="footer-links">
+        <a href="mailto:Haotian.Tang@mbzuai.ac.ae">Email</a>
+        <a href="https://orcid.org/0009-0000-2410-9092">ORCID</a>
+        <a href="https://www.linkedin.com/in/syncotang/">LinkedIn</a>
+        <a href="https://github.com/Haotian-Tang">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const page = document.body.dataset.page;
+    const current = document.querySelector('.nav-' + page);
+    if (current) current.setAttribute('aria-current', 'page');
+  </script>
 </body>
 </html>
