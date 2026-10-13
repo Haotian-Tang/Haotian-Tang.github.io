@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$description$">
+  <meta name="author" content="Haotian Tang">
+  <meta name="theme-color" content="#ffffff">
+  <title>$title$</title>
+  <link rel="canonical" href="$canonical$">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Haotian Tang">
+  <meta property="og:title" content="$title$">
+  <meta property="og:description" content="$description$">
+  <meta property="og:url" content="$canonical$">
+  <meta property="og:image" content="https://haotian-tang.github.io/img/portrait.jpg">
+  <meta property="og:image:alt" content="Haotian Tang">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Haotian Tang","url":"https://haotian-tang.github.io/","jobTitle":"PhD Student in Computational Biology","affiliation":{"@type":"CollegeOrUniversity","name":"Mohamed bin Zayed University of Artificial Intelligence"},"sameAs":["https://orcid.org/0009-0000-2410-9092","https://www.linkedin.com/in/syncotang/","https://github.com/Haotian-Tang"]}
+  </script>
+</head>
+<body data-page="$page-key$">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="index.html">Haotian Tang<span class="site-dot" aria-hidden="true">.</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-index" href="index.html">Home</a>
+        <a class="nav-research" href="research.html">Research</a>
+        <a class="nav-publications" href="publications.html">Publications</a>
+        <a class="nav-experience" href="experience.html">Experience</a>
+        <a class="nav-cv" href="Resume.pdf">CV <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+$body$
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><p class="footer-name">Haotian Tang</p><p>Computational Biology · MBZUAI</p></div>
+      <div class="footer-links">
+        <a href="mailto:Haotian.Tang@mbzuai.ac.ae">Email</a>
+        <a href="https://orcid.org/0009-0000-2410-9092">ORCID</a>
+        <a href="https://www.linkedin.com/in/syncotang/">LinkedIn</a>
+        <a href="https://github.com/Haotian-Tang">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    const page = document.body.dataset.page;
+    const current = document.querySelector('.nav-' + page);
+    if (current) current.setAttribute('aria-current', 'page');
+  </script>
+</body>
+</html>

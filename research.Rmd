@@ -1,414 +1,74 @@
 ---
-output: html_document
+title: "Research | Haotian Tang"
+description: "Research in rare-variant genomics, single-cell immune responses to malaria, and hypergraph learning for adverse drug reaction prediction."
+page-key: "research"
+canonical: "https://haotian-tang.github.io/research.html"
 ---
 
 ```{=html}
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+<main id="main" class="container">
+  <header class="page-heading">
+    <p class="eyebrow">Statistics, genomics &amp; machine learning</p>
+    <h1>Research</h1>
+    <p class="page-intro">I study how genetic and cellular differences shape disease and treatment responses. My work combines reproducible analysis pipelines, statistical modeling, and biologically informed machine learning.</p>
+  </header>
+  <nav class="section-nav" aria-label="Research topics">
+    <a href="#als">ALS genomics</a><a href="#malaria">Single-cell immunology</a><a href="#hyperadrs">Drug safety</a>
+  </nav>
 
-body {
-  background: #fafafa;
-}
-
-.research-page {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 56px 24px 72px;
-  font-family: "Inter", sans-serif;
-  color: #1f2933;
-}
-
-.research-hero {
-  margin-bottom: 42px;
-  padding: 36px 40px;
-  border-radius: 30px;
-  background: linear-gradient(135deg, #f7f1e8 0%, #eef4ff 50%, #ffffff 100%);
-  border: 1px solid rgba(30, 64, 175, 0.12);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
-}
-
-.research-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #7c5c2e;
-  margin-bottom: 8px;
-}
-
-.research-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 3.5rem;
-  line-height: 1.05;
-  font-weight: 700;
-  margin: 0 0 14px;
-  color: #111827;
-}
-
-.research-summary {
-  max-width: 850px;
-  font-size: 1.5rem;
-  line-height: 1.75;
-  color: #4b5563;
-  margin: 0;
-}
-
-.research-focus {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 22px;
-}
-
-.focus-tag {
-  display: inline-block;
-  padding: 8px 13px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.82);
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  color: #475569;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.section-label {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.35rem;
-  font-weight: 700;
-  color: #111827;
-  margin: 42px 0 20px;
-}
-
-.featured-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-.research-card {
-  position: relative;
-  padding: 30px 32px;
-  border-radius: 26px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(148, 163, 184, 0.28);
-  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.07);
-  overflow: hidden;
-}
-
-.research-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 8px;
-  height: 100%;
-  background: linear-gradient(to bottom, #1d4ed8, #0f766e);
-}
-
-.research-card.gold::before {
-  background: linear-gradient(to bottom, #b08968, #7c5c2e);
-}
-
-.research-card.teal::before {
-  background: linear-gradient(to bottom, #0f766e, #14b8a6);
-}
-
-.research-card.blue::before {
-  background: linear-gradient(to bottom, #1d4ed8, #60a5fa);
-}
-
-.research-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.meta-pill {
-  display: inline-block;
-  padding: 7px 12px;
-  border-radius: 999px;
-  background: #f3f4f6;
-  color: #6b7280;
-  font-size: 1rem;
-  font-weight: 700;
-}
-
-.project-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 2.05rem;
-  line-height: 1.15;
-  font-weight: 700;
-  color: #111827;
-  margin: 0 0 10px;
-}
-
-.project-role {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #374151;
-  margin-bottom: 12px;
-}
-
-.project-description {
-  font-size: 1.3rem;
-  line-height: 1.7;
-  color: #4b5563;
-  margin: 0 0 16px;
-}
-
-.project-list {
-  margin: 0;
-  padding-left: 1.25rem;
-  color: #4b5563;
-}
-
-.project-list li {
-  font-size: 1.22rem;
-  line-height: 1.65;
-  margin-bottom: 8px;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
-}
-
-.project-tag {
-  display: inline-block;
-  padding: 7px 11px;
-  border-radius: 999px;
-  background: #f8fafc;
-  border: 1px solid rgba(148, 163, 184, 0.35);
-  color: #475569;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.research-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.compact-card {
-  padding: 26px 28px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(148, 163, 184, 0.28);
-  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
-}
-
-.compact-title {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.85rem;
-  line-height: 1.15;
-  font-weight: 700;
-  color: #111827;
-  margin: 0 0 10px;
-}
-
-.compact-meta {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #6b7280;
-  margin-bottom: 12px;
-}
-
-.compact-description {
-  font-size: 1.18rem;
-  line-height: 1.68;
-  color: #4b5563;
-  margin: 0;
-}
-
-@media (max-width: 820px) {
-  .research-page {
-    padding: 36px 16px 56px;
-  }
-
-  .research-hero {
-    padding: 28px 24px;
-  }
-
-  .research-title {
-    font-size: 2.65rem;
-  }
-
-  .research-summary {
-    font-size: 1.25rem;
-  }
-
-  .research-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-title {
-    font-size: 1.85rem;
-  }
-
-  .project-description,
-  .project-list li {
-    font-size: 1.12rem;
-  }
-}
-</style>
-
-<main class="research-page">
-
-<section class="research-hero">
-  <div class="research-kicker">Research Portfolio</div>
-  <h1 class="research-title">Research</h1>
-  <p class="research-summary">
-    My research focuses on computational biomedical science, with an emphasis on pharmacogenomics,
-    adverse drug reaction prediction, single-cell omics, multi-omics integration, and statistical learning
-    for genomics and precision medicine.
-  </p>
-
-  <div class="research-focus">
-    <span class="focus-tag">Pharmacogenomics</span>
-    <span class="focus-tag">Single-cell Omics</span>
-    <span class="focus-tag">Multi-omics Integration</span>
-    <span class="focus-tag">Hypergraph Learning</span>
-    <span class="focus-tag">Biomedical Informatics</span>
-  </div>
-</section>
-
-<h2 class="section-label">Current Research</h2>
-
-<section class="featured-grid">
-
-  <article class="research-card blue">
-    <div class="research-meta">
-      <span class="meta-pill">Research Collaborator</span>
-      <span class="meta-pill">Jul. 2025 – Current</span>
-      <span class="meta-pill">Supervisor: Dr. Jun Wen</span>
+  <section id="als" class="project" aria-labelledby="als-title">
+    <div class="project-label"><span class="eyebrow">01 · Rare-variant genomics</span><p>Sep. 2026–present<br>MBZUAI</p></div>
+    <div class="project-body">
+      <h2 id="als-title">Genetic variation and RNA splicing in ALS</h2>
+      <p class="project-meta">PhD Researcher · Supervisor: Alla Mikheenko</p>
+      <p>I investigate rare genetic variants near TDP-43 binding regions and their potential role in abnormal RNA splicing in amyotrophic lateral sclerosis (ALS).</p>
+      <h3>My contribution</h3>
+      <ul class="contributions">
+        <li>Built an HPC analysis pipeline to quality-control and harmonize <strong>3,400+ whole-genome sequencing files</strong>, construct a variant catalog, and annotate candidate variants.</li>
+        <li>Performed rare-variant burden analyses with local controls and robustness checks for project, ancestry, and influential variants or genes.</li>
+        <li>Developed a pilot RNA-seq framework to examine splice-junction and read-level evidence for prioritized variants.</li>
+      </ul>
+      <p class="methods"><strong>Methods:</strong> WGS/VCF processing, gnomAD, VEP, SpliceAI, rare-variant analysis, Firth regression.</p>
     </div>
+  </section>
 
-    <h2 class="project-title">HyperADRs: Hierarchical Hypergraph Learning for Drug–Gene–ADR Prediction</h2>
-
-    <div class="project-role">
-      Pharmacogenomics · Hypergraph Neural Networks · Adverse Drug Reactions
+  <section id="malaria" class="project" aria-labelledby="malaria-title">
+    <div class="project-label"><span class="eyebrow">02 · Single-cell immunology</span><p>Aug. 2026–present<br>MBZUAI</p></div>
+    <div class="project-body">
+      <h2 id="malaria-title">Population differences in immune responses to malaria</h2>
+      <p class="project-meta">PhD Researcher · Supervisor: Eduardo Beltrame</p>
+      <p>I analyze blood immune cells from Fulani and Mossi children in Burkina Faso to understand how population background and <em>Plasmodium falciparum</em> infection relate to gene expression.</p>
+      <h3>My contribution</h3>
+      <ul class="contributions">
+        <li>Reanalyzed single-cell RNA-seq data from <strong>126 children and 88,784 cells</strong> after quality control.</li>
+        <li>Built a reproducible cell-type annotation pipeline using scVI and donor-balanced hierarchical classification with scHPL.</li>
+        <li>Compared gene expression at the donor and cell-type level using pseudobulk analysis, with sensitivity and permutation checks to evaluate robustness.</li>
+      </ul>
+      <p class="methods"><strong>Methods:</strong> Scanpy, scVI, scHPL, pseudobulk analysis, PyDESeq2, Memento.</p>
     </div>
+  </section>
 
-    <p class="project-description">
-      This project develops a hierarchical hypergraph framework for predicting adverse drug reactions by modeling
-      drug–gene–ADR relationships as biologically interpretable hyperedges. The work integrates pharmacogenomic
-      knowledge, causal gene and target information, and pathway-level evidence to improve ADR prediction.
-    </p>
-
-    <ul class="project-list">
-      <li>Constructed relational hypergraphs over drug–gene–ADR triplets for query-conditioned ADR prediction.</li>
-      <li>Designed ADR categorization strategies to reduce label sparsity and improve physiologically coherent prediction.</li>
-      <li>Benchmarked hypergraph learning models against MLP, GCN, GAT, and HGNN baselines under inductive splits.</li>
-      <li>Coordinated manuscript writing, figure preparation, methods description, and reproducibility materials.</li>
-    </ul>
-
-    <div class="project-tags">
-      <span class="project-tag">HyperADRs</span>
-      <span class="project-tag">HGCN</span>
-      <span class="project-tag">PharmGKB</span>
-      <span class="project-tag">DrugBank</span>
-      <span class="project-tag">ADR Prediction</span>
+  <section id="hyperadrs" class="project" aria-labelledby="hyperadrs-title">
+    <div class="project-label"><span class="eyebrow">03 · Computational pharmacogenomics</span><p>Jul. 2025–present<br>Remote collaboration</p></div>
+    <div class="project-body">
+      <h2 id="hyperadrs-title">HyperADRs: learning relationships between drugs, genes, and adverse reactions</h2>
+      <p class="project-meta">Research Collaborator · Supervisor: Jun Wen</p>
+      <p>HyperADRs uses hypergraphs to model drug–gene–adverse reaction relationships, connecting predictive models with biological evidence.</p>
+      <h3>My contribution</h3>
+      <ul class="contributions">
+        <li>Designed a biologically informed adverse reaction categorization scheme to reduce label sparsity and improve prediction and ranking.</li>
+        <li>Developed query-conditioned hypergraph models and benchmarked them against neural network and graph baselines on held-out entities.</li>
+        <li>Integrated gene, pathway, and protein interaction evidence; co-led experimental design, evaluation, reproducibility, figures, and manuscript preparation.</li>
+      </ul>
+      <p class="methods"><strong>Methods:</strong> PyTorch, hypergraph learning, PharmGKB, DrugBank.</p>
+      <p class="project-result"><span class="badge">Co-first-author preprint</span> <a href="https://arxiv.org/abs/2512.00137">Read HyperADRs on arXiv <span aria-hidden="true">↗</span></a></p>
     </div>
-  </article>
+  </section>
 
-  <article class="research-card teal">
-    <div class="research-meta">
-      <span class="meta-pill">Research Collaborator</span>
-      <span class="meta-pill">Oct. 2025 – Current</span>
-      <span class="meta-pill">Supervisor: Dr. Jun Wen</span>
-    </div>
-
-    <h2 class="project-title">Variant-Level Tensor Modeling for Drug–Disease–ADR Relationships</h2>
-
-    <div class="project-role">
-      Tensor Decomposition · Variant-Level Genomics · Pharmacogenetics
-    </div>
-
-    <p class="project-description">
-      This project investigates variant-level genetic effects on drug–disease–ADR relationships using directional
-      co-occurrence matrices and tensor-based modeling. The goal is to quantify how curated pharmacogenomic variants
-      deviate from baseline variant patterns.
-    </p>
-
-    <ul class="project-list">
-      <li>Integrated PharmGKB toxicity variants with large-scale baseline variant sets for comparative modeling.</li>
-      <li>Constructed variant-indexed directed co-occurrence matrices representing prior and posterior dependencies.</li>
-      <li>Implemented Python pipelines for sparse matrix parsing, cohort-size normalization, and integrity checking.</li>
-      <li>Planned tensor decomposition analyses using Tucker and CP models to evaluate variant-level deviation signals.</li>
-    </ul>
-
-    <div class="project-tags">
-      <span class="project-tag">Tensor Decomposition</span>
-      <span class="project-tag">PharmGKB</span>
-      <span class="project-tag">Sparse Matrices</span>
-      <span class="project-tag">Variant Modeling</span>
-    </div>
-  </article>
-
-</section>
-
-<h2 class="section-label">Selected Previous Research</h2>
-
-<section class="research-grid">
-
-  <article class="compact-card">
-    <h3 class="compact-title">Multi-omics Integration for Disease Subtyping</h3>
-    <div class="compact-meta">Columbia University · Supervisor: Dr. Shuang Wang · Apr. 2024 – May 2025</div>
-    <p class="compact-description">
-      Conducted literature review and simulation studies on advanced multi-omics integration methods for disease
-      subtyping, with emphasis on clustering algorithms, parameter tuning, and comparative evaluation.
-    </p>
-  </article>
-
-  <article class="compact-card">
-    <h3 class="compact-title">All of Us EHR Analysis for Breast and Prostate Cancer</h3>
-    <div class="compact-meta">Columbia University · Supervisor: Dr. Tian Gu · Sep. 2024 – May 2025</div>
-    <p class="compact-description">
-      Explored electronic health record data from the All of Us database and applied angle-based transfer learning
-      methods to analyze breast and prostate cancer-related data.
-    </p>
-  </article>
-
-  <article class="compact-card">
-    <h3 class="compact-title">Vision-Related Quality-of-Life in NYC-SIGHT</h3>
-    <div class="compact-meta">Columbia University · Supervisors: Dr. Prakash Gorroochurn and Dr. Lisa Hark · Feb. 2024 – Aug. 2024</div>
-    <p class="compact-description">
-      Performed statistical analyses of NEI-VFQ-9 outcomes in a randomized clinical trial, including group comparisons
-      and multivariable regression to identify predictors of improvement in vision-related quality-of-life.
-    </p>
-  </article>
-
-  <article class="compact-card">
-    <h3 class="compact-title">Clinical Characteristics in AMD and Diabetic Retinopathy</h3>
-    <div class="compact-meta">Columbia University · Supervisor: Dr. Alan Morse · Apr. 2024 – Aug. 2024</div>
-    <p class="compact-description">
-      Compared demographic and clinical characteristics in patients with age-related macular degeneration and diabetic
-      retinopathy, contributing to published analyses of disease-related behavioral and clinical factors.
-    </p>
-  </article>
-
-  <article class="compact-card">
-    <h3 class="compact-title">CYP450 and sEH Pathways in Alzheimer’s Disease</h3>
-    <div class="compact-meta">University of Toronto · Supervisor: Dr. Walter Swardfager · Sep. 2021 – Apr. 2022</div>
-    <p class="compact-description">
-      Investigated lipid-metabolism-related genetic pathways in Alzheimer’s disease using candidate SNPs and
-      multidimensional analysis of ADNI data.
-    </p>
-  </article>
-
-  <article class="compact-card">
-    <h3 class="compact-title">Duckweed–Microbiome Interactions</h3>
-    <div class="compact-meta">University of Toronto · Supervisor: Dr. Megan Frederickson · Sep. 2021 – Apr. 2022</div>
-    <p class="compact-description">
-      Studied species-specific duckweed–microbiome interactions using visualization and image analysis approaches.
-    </p>
-  </article>
-
-</section>
-
+  <section class="section closing-note">
+    <h2>Earlier research</h2>
+    <p>At Columbia, I worked on multi-omics disease subtyping, cancer analysis in the All of Us Research Program, and clinical ophthalmology studies. At Toronto, I studied genetic pathways in Alzheimer’s disease.</p>
+    <a class="text-link" href="experience.html#earlier-research">View research experience <span aria-hidden="true">→</span></a>
+  </section>
 </main>
 ```

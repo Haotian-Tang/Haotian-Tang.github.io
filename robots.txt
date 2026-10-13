@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://haotian-tang.github.io/sitemap.xml
