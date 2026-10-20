@@ -54,6 +54,7 @@ canonical: "https://haotian-tang.github.io/"
         <p class="evidence">Co-first-author preprint · arXiv, 2025</p>
       </article>
     </div>
+    <p class="paper-summary">I also develop <a href="research.html#pdd">exact algorithms for phylogenetic distance deconvolution</a>, with publicly released code and reproducibility records.</p>
   </section>
 
   <section class="section" aria-labelledby="work-title">
