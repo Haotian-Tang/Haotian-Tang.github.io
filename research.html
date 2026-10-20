@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research in rare-variant genomics, single-cell immune responses to malaria, and hypergraph learning for adverse drug reaction prediction.">
+  <meta name="description" content="Research in rare-variant genomics, single-cell immunology, drug safety, and exact phylogenetic distance deconvolution.">
   <meta name="author" content="Haotian Tang">
   <meta name="theme-color" content="#ffffff">
   <title>Research | Haotian Tang</title>
@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Haotian Tang">
   <meta property="og:title" content="Research | Haotian Tang">
-  <meta property="og:description" content="Research in rare-variant genomics, single-cell immune responses to malaria, and hypergraph learning for adverse drug reaction prediction.">
+  <meta property="og:description" content="Research in rare-variant genomics, single-cell immunology, drug safety, and exact phylogenetic distance deconvolution.">
   <meta property="og:url" content="https://haotian-tang.github.io/research.html">
   <meta property="og:image" content="https://haotian-tang.github.io/img/portrait.jpg">
   <meta property="og:image:alt" content="Haotian Tang">
@@ -38,12 +38,12 @@
   </header>
 <main id="main" class="container">
   <header class="page-heading">
-    <p class="eyebrow">Statistics, genomics &amp; machine learning</p>
+    <p class="eyebrow">Genomics, machine learning &amp; exact algorithms</p>
     <h1>Research</h1>
-    <p class="page-intro">I study how genetic and cellular differences shape disease and treatment responses. My work combines reproducible analysis pipelines, statistical modeling, and biologically informed machine learning.</p>
+    <p class="page-intro">I study how genetic and cellular differences shape disease and treatment responses. My work combines reproducible analysis pipelines, statistical modeling, and biologically informed machine learning. I also develop exact algorithms for inference on phylogenetic trees.</p>
   </header>
   <nav class="section-nav" aria-label="Research topics">
-    <a href="#als">ALS genomics</a><a href="#malaria">Single-cell immunology</a><a href="#hyperadrs">Drug safety</a>
+    <a href="#als">ALS genomics</a><a href="#malaria">Single-cell immunology</a><a href="#hyperadrs">Drug safety</a><a href="#pdd">Computational phylogenetics</a>
   </nav>
 
   <section id="als" class="project" aria-labelledby="als-title">
@@ -92,6 +92,23 @@
       </ul>
       <p class="methods"><strong>Methods:</strong> PyTorch, hypergraph learning, PharmGKB, DrugBank.</p>
       <p class="project-result"><span class="badge">Co-first-author preprint</span> <a href="https://arxiv.org/abs/2512.00137">Read HyperADRs on arXiv <span aria-hidden="true">↗</span></a></p>
+    </div>
+  </section>
+
+  <section id="pdd" class="project" aria-labelledby="pdd-title">
+    <div class="project-label"><span class="eyebrow">04 · Computational phylogenetics</span><p>2026<br>MBZUAI</p></div>
+    <div class="project-body">
+      <h2 id="pdd-title">Exact phylogenetic distance deconvolution (PDD)</h2>
+      <p class="project-meta">Unpublished manuscript for RECOMB 2027 · <em>Report the tolerance, not the count: exact phylogenetic distance deconvolution with incomplete references</em></p>
+      <p>I study how many evolutionary sources are needed to explain a mixed sample’s distances to observed leaves of a reference phylogeny, and how missing references affect source counts and the uniqueness of source placements.</p>
+      <h3>My contribution</h3>
+      <ul class="contributions">
+        <li>Developed exact rational solvers for minimum source count, with parameterized complexity analysis of models with a free or prescribed mean pendant length.</li>
+        <li>Formulated the minimum fitting tolerance at each source count using rational linear programming, with a linear-time single-source calculation; evaluated reference loss on exact-model and real estimated distances.</li>
+        <li>Released a frozen instance bank, archived experimental results, claim-to-record mappings, checksums, and runnable reproduction checks, with bulk per-run records in the versioned release.</li>
+      </ul>
+      <p class="methods"><strong>Methods:</strong> Phylogenetics, exact algorithms, parameterized complexity, rational linear programming, scientific reproducibility.</p>
+      <p class="project-result"><span class="badge">Code and data released</span> <a href="https://github.com/Haotian-Tang/recomb2027-pdd">GitHub repository <span aria-hidden="true">↗</span></a> <a href="https://github.com/Haotian-Tang/recomb2027-pdd/releases/tag/v1.0.0">v1.0.0 release <span aria-hidden="true">↗</span></a></p>
     </div>
   </section>
 
